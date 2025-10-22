@@ -6,7 +6,7 @@ import jakarta.validation.constraints.Size;
 import lombok.*;
 
 
-@Data @NoArgsConstructor @AllArgsConstructor @Builder
+//@Data @NoArgsConstructor @AllArgsConstructor @Builder
 public class Passenger {
 
     @NotBlank @Size(max = 40)
@@ -21,4 +21,33 @@ public class Passenger {
     @NotBlank @Email
     private String email;
 
+    public Passenger(String passengerId, String name, String email) {
+        this.passengerId = passengerId;
+        this.name = name;
+        this.email = email;
+    }
+
+    public String getPassengerId() {
+        return passengerId;
+    }
+
+    public void setPassengerId(String passengerId) {
+        this.passengerId = passengerId;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
 }
